@@ -1,1 +1,1 @@
-select * from mytable
+select * from D_MAIN_MENUS connect by prior id = pid start with pid is null order by level, menu_order

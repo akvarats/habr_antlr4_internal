@@ -26,5 +26,5 @@ if __name__ == "__main__":
     ora_root = parser.sql_script()
     pg_root = translator.translate(ora_root)
 
-    print("PG root: {}".format(pg_root))
+    print("PG root: {}".format(pg_root.get_text() if pg_root else None))
 
