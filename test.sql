@@ -1,1 +1,2 @@
-select * from D_MAIN_MENUS connect by prior id = pid start with pid is null order by level, menu_order
+-- select * from D_MAIN_MENUS connect by prior id = pid start with pid is null order by level, menu_order
+select x, y, z from D_MAIN_MENUS connect by prior id = pid start with pid is null order by level, menu_order

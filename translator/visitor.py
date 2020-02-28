@@ -38,6 +38,12 @@ class Visitor(PlSqlParserVisitor):
         text = node.getText()
         return TokenNode(text) if text != "<EOF>" else None
 
-    # def visitQuery_block(self, ctx:PlSqlParser.Query_blockContext):
-    #     return self.translator.translate_query_block(ctx)
+    def visitQuery_block(self, ctx:PlSqlParser.Query_blockContext):
+        if ctx.hierarchical_query_clause() is not None:
+            # это иерархический запрос
+            return self.translator.translate_hierarchical_query(ctx)
+
+        # реализуем поведение визитора по умолчанию
+        return super().visitQuery_block(ctx)
+
 

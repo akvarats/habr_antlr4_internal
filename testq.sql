@@ -1,0 +1,1 @@
+select * from D_MAIN_MENUS order by level, menu_order
