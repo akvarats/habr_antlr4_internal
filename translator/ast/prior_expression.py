@@ -4,9 +4,11 @@ from .base import BaseNode
 class PriorExpressionNode(BaseNode):
     """ """
 
-    def __init__(self):
+    def __init__(self, expression: BaseNode):
         super().__init__()
-        self.expression = None
+        self.expression = expression
 
     def get_text(self):
-        return self.expression.x
+        """ """
+        # для PG явно указывать PRIOR не надо
+        return self.expression.get_text()
